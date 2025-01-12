@@ -9,9 +9,16 @@ interface InputProps {
 
 export const AuthInputComponent: React.FC<InputProps> = ({ id, type, placeholder, label }) => (
     <div>
-        <label htmlFor={id} className="block text-sm font-medium text-blue-900">
+        <label htmlFor={id} className="block text-sm font-medium text-[#1FCEFF]">
             {label}
         </label>
-        <input id={id} type={type} placeholder={placeholder} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"/>
+        <input
+            id={id}
+            type={type}
+            placeholder={placeholder}
+            className="mt-2 block w-full px-4 py-3 bg-white border border-gray-300 rounded-[30px] text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1FCEFF] focus:border-[#1FCEFF] transition-all duration-300 ease-in-out hover:border-[#1FCEFF] hover:ring-1 placeholder-gray-400"
+        />
     </div>
+
+
 );

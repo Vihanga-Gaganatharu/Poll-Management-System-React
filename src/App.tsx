@@ -4,6 +4,7 @@ import {RootLayout} from "./components/layout/RootLayout.tsx";
 import {NotFoundLayout} from "./components/layout/NotFoundLayout.tsx";
 import {RouterProvider} from "react-router/dom";
 import {UserSignInPage} from "./pages/UserSignInPage.tsx";
+import {UserSignUpPage} from "./pages/UserSignUpPage.tsx";
 
 function App() {
     const route = createBrowserRouter([
@@ -13,6 +14,7 @@ function App() {
             children: [
                 { path: '', element: <Navigate to="/signin" replace /> },
                 { path : '/signin', element : <UserSignInPage/>},
+                { path : '/signup', element : <UserSignUpPage/>},
             ],
 
         },
