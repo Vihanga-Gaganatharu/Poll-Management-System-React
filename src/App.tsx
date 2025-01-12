@@ -1,8 +1,9 @@
 import './App.css'
-import {createBrowserRouter} from "react-router";
+import {createBrowserRouter, Navigate} from "react-router";
 import {RootLayout} from "./components/layout/RootLayout.tsx";
 import {NotFoundLayout} from "./components/layout/NotFoundLayout.tsx";
 import {RouterProvider} from "react-router/dom";
+import {UserSignInPage} from "./pages/UserSignInPage.tsx";
 
 function App() {
     const route = createBrowserRouter([
@@ -10,7 +11,8 @@ function App() {
             path: '',
             element: <RootLayout/>,
             children: [
-                {path: '/customer', element: <h1>customer</h1>},
+                { path: '', element: <Navigate to="/signin" replace /> },
+                { path : '/signin', element : <UserSignInPage/>},
             ],
 
         },

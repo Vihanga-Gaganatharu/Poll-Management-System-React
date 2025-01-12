@@ -1,11 +1,9 @@
-import {Signin} from "../../pages/auth/Signin.tsx";
-import {Outlet} from "react-router";
+import {Outlet} from "react-router-dom";
 
 export const RootLayout = () => {
     return (
         <>
-            <Signin/>
-            <Outlet/>
+            <Outlet></Outlet>
         </>
     );
 };
