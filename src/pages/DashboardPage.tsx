@@ -1,8 +1,6 @@
 import {SideBarPage} from "../components/SideBar/SideBarPage.tsx";
 import {DashboardHeader} from "../components/Header/DashboardHeader.tsx";
 import {StatCardComponent} from "../components/Card/StatCardComponent.tsx";
-import {ChartComponent} from "../components/Chart/ChartComponent.tsx";
-
 export const DashboardPage = () => {
     return (
         <div className="min-h-screen flex bg-gray-100">
@@ -12,7 +10,7 @@ export const DashboardPage = () => {
             {/* Main Content */}
             <div className="flex-1 flex flex-col">
                 {/* Header */}
-                <DashboardHeader title="Student Management Dashboard" />
+                <DashboardHeader title="Dashboard" />
 
                 {/* Main Section */}
                 <main className="p-6 space-y-6">
@@ -46,27 +44,22 @@ export const DashboardPage = () => {
                     </div>
 
 
-                    {/* Charts Section */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <ChartComponent title="Monthly Attendance" type="bar"/>
-                        <ChartComponent title="Fee Collection" type="line"/>
-                    </div>
 
                     {/* Latest Updates */}
                     <div className="bg-white rounded-lg shadow p-6">
                         <h2 className="text-xl font-bold text-gray-800">Latest Updates</h2>
                         <ul className="mt-4 space-y-3">
                             <li className="flex justify-between items-center border-b pb-2">
-                                <span>New student registered: John Doe</span>
-                                <span className="text-sm text-gray-500">2 hours ago</span>
+                                <span>New student registered: Dulanaka Gayan</span>
+                                <span className="text-sm text-gray-500">20 Min ago</span>
                             </li>
                             <li className="flex justify-between items-center border-b pb-2">
-                                <span>Class schedule updated for Grade 10</span>
-                                <span className="text-sm text-gray-500">5 hours ago</span>
+                                <span>Class schedule updated for ICT </span>
+                                <span className="text-sm text-gray-500">2 hours ago</span>
                             </li>
                             <li className="flex justify-between items-center">
-                                <span>Fee payment received: Jane Smith</span>
-                                <span className="text-sm text-gray-500">1 day ago</span>
+                                <span>Fee payment received: Sadun Dilshan</span>
+                                <span className="text-sm text-gray-500">12 Hours ago</span>
                             </li>
                         </ul>
                     </div>
