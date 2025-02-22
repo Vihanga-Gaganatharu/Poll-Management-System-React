@@ -11,6 +11,8 @@ interface Staff {
     role: string;
     department: string;
     email: string;
+    phone: string;
+    salary: number;
 }
 
 export const StaffPage: React.FC = () => {
@@ -21,9 +23,11 @@ export const StaffPage: React.FC = () => {
     const staffColumns = [
         { key: "staffId", label: "Staff ID" },
         { key: "name", label: "Name" },
-        { key: "role", label: "role" },
-        { key: "department", label: "Department" },
+        { key: "role", label: "Role" },
+        { key: "phone", label: "Phone" },
         { key: "email", label: "Email" },
+        { key: "salary", label: "Salary" },
+
     ];
 
     const handleAddOrEditStaff = (staffData: Staff) => {

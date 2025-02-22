@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import {PopupContainer} from "../components/popup/PopupContainer.tsx";
+
+// Import the container
 
 interface Staff {
     staffId: string;
@@ -6,6 +9,8 @@ interface Staff {
     role: string;
     department: string;
     email: string;
+    phone: string;
+    salary: number;
 }
 
 interface StaffFormPopupProps {
@@ -29,19 +34,32 @@ export const StaffFormPopup: React.FC<StaffFormPopupProps> = ({
         role: "",
         department: "",
         email: "",
+        phone: "",
+        salary: 0,
     });
 
     useEffect(() => {
         if (editMode && initialData) {
-            setStaffData({ ...staffData, ...initialData });
+            setStaffData((prev) => ({ ...prev, ...initialData }));
         } else {
-            setStaffData({ staffId: "", name: "", role: "", department: "", email: "" });
+            setStaffData({
+                staffId: "",
+                name: "",
+                role: "",
+                department: "",
+                email: "",
+                phone: "",
+                salary: 0,
+            });
         }
     }, [initialData, editMode]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setStaffData((prev) => ({ ...prev, [name]: value }));
+        setStaffData((prev) => ({
+            ...prev,
+            [name]: name === "salary" ? Number(value) : value, // Ensure salary is a number
+        }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -49,68 +67,95 @@ export const StaffFormPopup: React.FC<StaffFormPopupProps> = ({
         onSubmit(staffData);
     };
 
-    if (!isOpen) return null;
-
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg w-96">
-                <h2 className="text-xl font-bold mb-4">{editMode ? "Edit Staff" : "Add Staff"}</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+        <PopupContainer isOpen={isOpen} onClose={onClose} title={editMode ? "Edit Staff" : "Add Staff"}>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Staff ID</label>
                     <input
                         type="text"
                         name="staffId"
                         value={staffData.staffId}
                         onChange={handleChange}
-                        placeholder="Staff ID"
-                        className="w-full px-3 py-2 border rounded"
                         required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
                     />
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Name</label>
                     <input
                         type="text"
                         name="name"
                         value={staffData.name}
                         onChange={handleChange}
-                        placeholder="Name"
-                        className="w-full px-3 py-2 border rounded"
                         required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
                     />
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Role</label>
                     <input
                         type="text"
                         name="role"
                         value={staffData.role}
                         onChange={handleChange}
-                        placeholder="role"
-                        className="w-full px-3 py-2 border rounded"
                         required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
                     />
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Department</label>
                     <input
                         type="text"
                         name="department"
                         value={staffData.department}
                         onChange={handleChange}
-                        placeholder="Department"
-                        className="w-full px-3 py-2 border rounded"
                         required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
                     />
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Email</label>
                     <input
                         type="email"
                         name="email"
                         value={staffData.email}
                         onChange={handleChange}
-                        placeholder="Email"
-                        className="w-full px-3 py-2 border rounded"
                         required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
                     />
-                    <div className="flex justify-end space-x-2">
-                        <button type="button" onClick={onClose} className="px-4 py-2 bg-gray-300 rounded">
-                            Cancel
-                        </button>
-                        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
-                            {editMode ? "Update" : "Add"}
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Phone</label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        value={staffData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-bold text-gray-700">Salary</label>
+                    <input
+                        type="number"
+                        name="salary"
+                        value={staffData.salary}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-cyan-400 rounded-[20px] p-2 shadow-md"
+                    />
+                </div>
+                <div className="flex justify-end space-x-3">
+                    <button
+                        type="submit"
+                        className="px-5 py-2.5 text-white bg-gradient-to-r from-cyan-400 to-cyan-500 border border-white rounded-[20px] shadow-xl hover:from-cyan-500 hover:to-cyan-700 hover:border-cyan-500 focus:ring-4 focus:ring-cyan-400 focus:outline-none transition-all"
+                    >
+                        {editMode ? "Update Staff" : "Add Staff"}
+                    </button>
+                </div>
+            </form>
+        </PopupContainer>
     );
 };

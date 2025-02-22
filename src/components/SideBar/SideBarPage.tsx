@@ -14,9 +14,8 @@ export const SideBarPage = () => {
         { label: "Students", link: "/students", icon: <Users color="#ffffff"  size={25}/> },
         { label: "Staff", link: "/staff", icon: <Speech color="#ffffff" size={25} /> },
         { label: "Payment", link: "/payment", icon: <CircleDollarSign color="#ffffff" size={25} /> },
-        { label: "Reports", link: "/reports", icon: <NotebookText color="#ffffff" size={25} /> },
-        { label: "Settings", link: "/settings", icon: <Cog color="#ffffff" size={25} /> },
-        { label: "Announcement", link: "/announcement", icon: <Speaker color="#ffffff" size={25} /> },
+        { label: "Class", link: "/class", icon: <NotebookText color="#ffffff" size={25} /> },
+        { label: "Log", link: "/log", icon: <Speaker color="#ffffff" size={25} /> },
         { label: "Logout", link: "/signin", icon: <DoorOpen color="#ffffff" size={25} />},
     ];
 
