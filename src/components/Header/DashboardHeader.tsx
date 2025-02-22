@@ -8,7 +8,7 @@ export const DashboardHeader = ({ title }: { title: string }) => {
                     placeholder="Search..."
                     className="border rounded px-4 py-2 text-sm"
                 />
-                <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                <button className="bg-cyan-300 text-white px-4 py-2 rounded">
                     Notifications
                 </button>
             </div>

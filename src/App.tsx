@@ -7,6 +7,7 @@ import {UserSignInPage} from "./pages/UserSignInPage.tsx";
 import {UserSignUpPage} from "./pages/UserSignUpPage.tsx";
 import {DashboardPage} from "./pages/DashboardPage.tsx";
 import {StudentPage} from "./pages/StudentPage.tsx";
+import {StaffPage} from "./pages/StaffDetailsPage.tsx";
 
 function App() {
     const route = createBrowserRouter([
@@ -19,6 +20,7 @@ function App() {
                 { path : '/signup', element : <UserSignUpPage/>},
                 { path : '/dashbord', element : <DashboardPage/>},
                 { path : '/students', element : <StudentPage/>},
+                { path : '/staff', element : <StaffPage/>},
             ],
 
         },
