@@ -1,5 +1,5 @@
 import {
-    CircleDollarSign, Cog, DoorOpen,
+    CircleDollarSign, DoorOpen,
     LayoutDashboard,
     NotebookText,
     Speaker,

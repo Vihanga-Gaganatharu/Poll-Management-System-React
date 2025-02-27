@@ -9,6 +9,8 @@ import {DashboardPage} from "./pages/DashboardPage.tsx";
 import {StudentPage} from "./pages/StudentPage.tsx";
 import {StaffPage} from "./pages/StaffDetailsPage.tsx";
 import {ClassDetailsPage} from "./pages/ClassDetails.tsx";
+import {PaymentPage} from "./pages/PaymentPage.tsx";
+import {LogPage} from "./pages/LogPage.tsx";
 
 function App() {
     const route = createBrowserRouter([
@@ -22,8 +24,9 @@ function App() {
                 { path : '/dashbord', element : <DashboardPage/>},
                 { path : '/students', element : <StudentPage/>},
                 { path : '/staff', element : <StaffPage/>},
-                { path : '?class', element : <ClassDetailsPage/>},
-
+                { path : '/class', element : <ClassDetailsPage/>},
+                { path : '/payment', element : <PaymentPage/>},
+                { path : '/log', element : <LogPage/>},
             ],
 
 
