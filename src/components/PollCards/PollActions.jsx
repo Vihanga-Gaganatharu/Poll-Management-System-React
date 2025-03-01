@@ -30,7 +30,7 @@ const PollActions = ({ isVoteComplete, inputCaptured, onVoteSubmit, isBookmarked
                 Delete
             </button>)}
 
-            <button className="icon-btn" onClick={toggleBookmark}>{isBookmarked ? <FaBookmark className="text-primary" /> : <FaRegBookmark />}</button>
+            <button className="icon-btn" onClick={toggleBookmark}>{isBookmarked ? <FaBookmark className="text-green-400" /> : <FaRegBookmark />}</button>
 
             {inputCaptured && !isVoteComplete && (
                 <button className="btn-small ml-auto" onClick={handleVoteClick} disabled={loading}>

@@ -114,7 +114,7 @@ const SignUpForm = () => {
                             value={userName}
                             onChange={({ target }) => setUserName(target.value)}
                             label="Username"
-                            placeholder="....."
+                            placeholder="username"
                             type="text"
                             error={error && !userName ? "Please enter the username." : ""}
                             className="shadow-md border border-gray-300 focus:border-cyan-500 focus:ring-2 focus:ring-green-400 transition duration-300"

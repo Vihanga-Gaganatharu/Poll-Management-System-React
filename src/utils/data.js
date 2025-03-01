@@ -26,12 +26,6 @@ export const SIDE_MENU_DATA = [
         path: "/voted-polls"
     },
     {
-        id: "05",
-        label: "Bookmarks",
-        icon: LuBookmark,
-        path: "/bookmarked-polls",
-    },
-    {
         id: "06",
         label: "Logout",
         icon: LuLogOut,
