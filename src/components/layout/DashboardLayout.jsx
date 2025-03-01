@@ -25,7 +25,6 @@ const DashboardLayout = ({children, activeMenu, stats, showStats}) => {
                         username={user && user.username}
                         totalPollsVotes={user && user.totalPollsVotes}
                         totalPollsCreated={user && user.totalPollsCreated}
-                        totalPollsBookmarked={user && user.totalPollsBookmarked}
                     />
 
                     {showStats && stats?.length > 0 && <TrendingPolls stats={stats} />}

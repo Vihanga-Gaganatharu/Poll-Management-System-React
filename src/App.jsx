@@ -6,7 +6,6 @@ import Home from "./pages/Dashboard/Home";
 import CreatePoll from "./pages/Dashboard/CreatePoll";
 import MyPolls from "./pages/Dashboard/MyPolls";
 import VotedPolls from "./pages/Dashboard/VotedPolls";
-import Bookmarks from "./pages/Dashboard/Bookmarks";
 import UserProvider from "./context/UserContext.jsx";
 import {Toaster} from "react-hot-toast";
 
@@ -23,7 +22,6 @@ const App = () => {
                         <Route path="/create-poll" element={<CreatePoll/>}/>
                         <Route path="/my-polls" element={<MyPolls/>}/>
                         <Route path="/voted-polls" element={<VotedPolls/>}/>
-                        <Route path="/bookmarked-polls" element={<Bookmarks/>}/>
                     </Routes>
                 </Router>
 
