@@ -1,12 +1,60 @@
-# React + Vite
+# Poll Management System - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for creating and managing polls with real-time updates.
 
-Currently, two official plugins are available:
+## 🚀 Introduction
+The **Poll Management System** is a React-based web application that allows users to create, vote, and bookmark polls easily. This project aims to provide a seamless and engaging experience for managing online polls with real-time updates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
+- 📝 **Create Polls** - Users can create custom polls with multiple choices.
+- ✅ **Vote in Polls** - Users can vote for their preferred option.
+- 🔖 **Bookmark Polls** - Save favorite polls for easy access.
+- 📊 **Real-time Results** - Instantly see live poll results.
+- 🔐 **Secure Authentication** - User authentication for better poll management.
+- 🎨 **Modern UI** - Built with React and Tailwind CSS for a clean and responsive interface.
 
-## Expanding the ESLint configuration
+## 🛠️ Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to run the project locally:
+
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+
+### Steps to Install
+```bash
+# Clone the repository
+git clone https://github.com/Vihanga-Gaganatharu/Poll-Management-System-React.git
+
+# Navigate into the project folder
+cd Poll-Management-System-React
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+The app will be available at `http://localhost:3000`.
+
+
+## 🤝 Contributing
+Contributions are welcome! Follow these steps:
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m 'Add new feature'`.
+4. Push to your branch: `git push origin feature-name`.
+5. Open a Pull Request.
+
+## 📝 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+## 📬 Contact
+For any inquiries or suggestions, reach out via:
+- GitHub Issues
+- Email: vihangagaganatharu@example.com
+
+---
+🌟 **If you like this project, give it a star on GitHub!** ⭐
