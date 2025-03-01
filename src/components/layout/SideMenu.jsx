@@ -30,7 +30,7 @@ const SideMenu = ({ activeMenu }) => {
                 <button
                     key={`menu_${index}`}
                     className={`w-full flex items-center gap-4 text-[15px] ${
-                        activeMenu === item.label ? "text-white bg-primary" : ""
+                        activeMenu === item.label ? "text-white bg-green-400" : ""
                     } py-4 px-6 rounded-full mb-3`}
                     onClick={() => handleClick(item.path)}
                 ><item.icon clasName="text-xl" /> {item.label}

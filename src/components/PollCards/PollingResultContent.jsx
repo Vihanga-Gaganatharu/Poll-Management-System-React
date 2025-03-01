@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 import CharAvatar from "../cards/CharAvatar.jsx";
 
-// Component to display poll option vote results
 const PollOptionVoteResult = ({ label, optionVotes, totalVotes }) => {
     const progress = totalVotes > 0 ? Math.round((optionVotes / totalVotes) * 100) : 0;
 
