@@ -10,7 +10,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import EmptyCard from "../../components/cards/EmptyCard.jsx";
 import CREATE_ICON from "../../assets/images/my-poll-icon.png";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 6;
 
 const Home = () => {
     useUserAuth();
@@ -68,15 +68,9 @@ const Home = () => {
         }
     }, [page]);
 
-    /*const loadMorePolls = () => {
-        if (!loading && hasMore) {
-            setPage((prevPage) => prevPage + 1);
-        }
-    };*/
-
     return (
         <DashboardLayout activeMenu="Dashboard" stats={stats || []} showStats>
-            <div className="my-5 mx-auto">
+            <div className="my-5 mx-auto max-w-6xl px-4">
                 <HeaderWithFilter
                     title="Polls"
                     filterType={filterType}
@@ -96,26 +90,28 @@ const Home = () => {
                     dataLength={allPolls.length}
                     next={loadMorePolls}
                     hasMore={hasMore}
-                    loader={<h4 className="info-text">Loading...</h4>}
-                    endMessage={<p className="info-text">No more polls to display.</p>}
+                    loader={<h4 className="text-center text-gray-500">Loading...</h4>}
+                    endMessage={<p className="text-center text-gray-500">No more polls to display.</p>}
                 >
-                    {allPolls.map((poll) => (
-                        <PollCard
-                            key={`dashboard_${poll._id}`}
-                            pollId={poll._id}
-                            question={poll.question}
-                            type={poll.type}
-                            options={poll.options}
-                            voters={poll.voters?.length || 0}
-                            responses={poll.responses || []}
-                            creatorProfileImg={poll.creator?.profileImageUrl || null}
-                            creatorName={poll.creator?.fullName || "Unknown"}
-                            creatorUsername={poll.creator?.username || "unknown"}
-                            userHasVoted={poll.userHasVoted || false}
-                            isPollClosed={poll.pollClosed || false}
-                            createdAt={poll.createdAt || ""}
-                        />
-                    ))}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {allPolls.map((poll) => (
+                            <PollCard
+                                key={`dashboard_${poll._id}`}
+                                pollId={poll._id}
+                                question={poll.question}
+                                type={poll.type}
+                                options={poll.options}
+                                voters={poll.voters?.length || 0}
+                                responses={poll.responses || []}
+                                creatorProfileImg={poll.creator?.profileImageUrl || null}
+                                creatorName={poll.creator?.fullName || "Unknown"}
+                                creatorUsername={poll.creator?.username || "unknown"}
+                                userHasVoted={poll.userHasVoted || false}
+                                isPollClosed={poll.pollClosed || false}
+                                createdAt={poll.createdAt || ""}
+                            />
+                        ))}
+                    </div>
                 </InfiniteScroll>
             </div>
         </DashboardLayout>

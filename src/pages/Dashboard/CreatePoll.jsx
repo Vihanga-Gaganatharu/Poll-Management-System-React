@@ -121,14 +121,14 @@ const CreatePoll = () => {
 
     return (<DashboardLayout activeMenu='Create Poll'>
         <div className="bg-gray-100/80 my-5 p-5 rounded-lg mx-auto">
-            <h2 className="text-lg text-black font-medium">Create Poll</h2>
+            <h2 className="text-lg text-green-600 font-medium">Create Poll</h2>
 
             <div className="mt-3">
-                <label className="text-xs font-medium text-slate-600">QEUSTION</label>
+                <label className="text-xs font-medium text-green-400">QEUSTION</label>
 
                 <textarea
-                    placeholder="What's in your mind"
-                    className="w-full text-[13px] text-black outline-none bg-slate-200/80 p-2 rounded-md mt-2"
+                    placeholder="Enter Your massege"
+                    className="w-full text-[19px] text-black outline-none bg-slate-200 p-2 rounded-lg mt-4"
                     rows={4}
                     value={pollData.question}
                     onChange={({target}) => handleValueChange("question", target.value)}
@@ -142,10 +142,10 @@ const CreatePoll = () => {
                     {POLL_TYPE.map((item) => (
                         <div
                             key={item.value}
-                            className={`option-chip ${
+                            className={`option-chip bg-white text-green-500 border-green-400 hover:border-green-700 border-2 ${
                                 pollData.type === item.value
-                                    ? "text-white bg-primary border-primary"
-                                    : "border-sky-100"
+                                    ? "text-white bg-green-500 border-green-500"
+                                    : "border-green-500 border-2 "
                             }`}
                             onClick={() => {
                                 handleValueChange("type", item.value);
@@ -197,8 +197,8 @@ const CreatePoll = () => {
                 </p>
             )}
 
-            <button className="btn-primary py-2 mt-6" onClick={handleCreatePoll}>
-                CREATE POLL
+            <button className="btn-primary py-2 mt-6 bg-green-400 border-2 border-green-400 hover:bg-white text-white hover:text-green-400 transition duration-500" onClick={handleCreatePoll}>
+            CREATE POLL
             </button>
         </div>
     </DashboardLayout>

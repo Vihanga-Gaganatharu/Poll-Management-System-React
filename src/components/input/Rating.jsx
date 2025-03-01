@@ -28,9 +28,9 @@ const Rating = ({ maxStars = 5, value = 0, onChange, readOnly = false }) => {
                 const starValue = index + 1;
                 return (
                     <span
-                        key={starValue} // <-- Added key for performance optimization
+                        key={starValue}
                         className={`text-3xl transition-colors ${
-                            starValue <= (hoverValue || value) ? "text-yellow-400" : "text-gray-300"
+                            starValue <= (hoverValue || value) ? "text-yellow-400" : "text-gray-200"
                         }`}
                         onClick={() => handleClick(starValue)}
                         onMouseEnter={() => handleMouseEnter(starValue)}

@@ -33,7 +33,7 @@ const SideMenu = ({ activeMenu }) => {
                         activeMenu === item.label ? "text-white bg-green-400" : ""
                     } py-4 px-6 rounded-full mb-3`}
                     onClick={() => handleClick(item.path)}
-                ><item.icon clasName="text-xl" /> {item.label}
+                ><item.icon clasName="text-xxl" /> {item.label}
                 </button>
             ))}
         </div>
